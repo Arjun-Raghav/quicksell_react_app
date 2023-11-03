@@ -19,28 +19,79 @@ code {
 }
 
 .options {
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin-bottom: 20px;
 }
 
 .kanban-columns {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .kanban-column {
   flex: 1;
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
   margin: 10px;
 }
 
-.ticket {
-  border: 1px solid #aaa;
+.ticket-card, .user-card {
   background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-/* Add additional styling as needed */
+.ticket-header, .user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.ticket-id, .user-id {
+  font-weight: bold;
+}
+
+.user-icon {
+  color: grey;
+}
+
+.ticket-title, .user-title {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.ticket-info, .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.three-dots-icon {
+  color: grey;
+}
+
+.tag-icon {
+  color: grey;
+  margin: 0 5px;
+}
+
+.ticket-tag, .user-tag {
+  font-size: 12px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.availability-icon {
+  color: blue;
+}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'; // Import your CSS styles
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle, faEllipsisH, faCheck, faExclamationTriangle, faSignal } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
 
 const API_URL = 'https://api.quicksell.co/v1/internal/frontend-assignment';
 
@@ -7,19 +9,21 @@ function KanbanBoard() {
   const [tickets, setTickets] = useState([]);
   const [grouping, setGrouping] = useState('status');
   const [sorting, setSorting] = useState('priority');
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
         setTickets(data.tickets);
+        setUsers(data.users);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
   }, []);
 
-  const groupAndSortTickets = (tickets, grouping, sorting) => {
+  const groupAndSortTickets = (tickets, grouping, sorting, users) => {
     let groupedTickets = {};
 
     if (grouping === 'status') {
@@ -33,10 +37,14 @@ function KanbanBoard() {
     } else if (grouping === 'user') {
       tickets.forEach((ticket) => {
         const userId = ticket.userId;
-        if (!groupedTickets[userId]) {
-          groupedTickets[userId] = [];
+        const user = users.find((u) => u.id === userId);
+        if (user) {
+          const userName = user.name;
+          if (!groupedTickets[userName]) {
+            groupedTickets[userName] = [];
+          }
+          groupedTickets[userName].push(ticket);
         }
-        groupedTickets[userId].push(ticket);
       });
     } else if (grouping === 'priority') {
       [0, 1, 2, 3, 4].forEach((priority) => {
@@ -76,7 +84,7 @@ function KanbanBoard() {
     }
   };
 
-  const groupedAndSortedTickets = groupAndSortTickets(tickets, grouping, sorting);
+  const groupedAndSortedTickets = groupAndSortTickets(tickets, grouping, sorting, users);
 
   return (
     <div className="kanban-board">
@@ -97,13 +105,7 @@ function KanbanBoard() {
           <div key={group} className="kanban-column">
             <h3>{group}</h3>
             {groupedAndSortedTickets[group].map((ticket) => (
-              <div key={ticket.id} className="ticket">
-                <h4>{ticket.title}</h4>
-                <p>Status: {ticket.status}</p>
-                <p>Priority: {ticket.priority}</p>
-                <p>Tags: {ticket.tag.join(', ')}</p>
-                <p>ID: {ticket.id}</p>
-              </div>
+              <TicketCard key={ticket.id} ticket={ticket} />
             ))}
           </div>
         ))}
@@ -111,5 +113,46 @@ function KanbanBoard() {
     </div>
   );
 }
+
+const TicketCard = ({ ticket }) => {
+  let priorityIcon;
+
+  if (ticket.priority === 4) {
+    priorityIcon = <FontAwesomeIcon icon={faExclamationTriangle} />;
+  } else if (ticket.priority === 3) {
+    priorityIcon = <FontAwesomeIcon icon={faSignal} />;
+  } else if (ticket.priority === 2) {
+    priorityIcon = <FontAwesomeIcon icon={faSignal} />;
+  } else if (ticket.priority === 1) {
+    priorityIcon = <FontAwesomeIcon icon={faSignal} />;
+  } else {
+    priorityIcon = <FontAwesomeIcon icon={faEllipsisH} />;
+  }
+
+  return (
+    <div className="ticket-card">
+      <div className="ticket-header">
+        <div className="ticket-id">{ticket.id}</div>
+        <div className="user-icon">
+          <FontAwesomeIcon icon={faCircle} /> {/* Empty circle icon */}
+        </div>
+      </div>
+      <div className="ticket-title">
+        <strong>{ticket.title}</strong>
+      </div>
+      <div className="ticket-info">
+        <div className="tag-icon">
+          <FontAwesomeIcon icon={faCircle} /> {/* Small grey circle icon */}
+        </div>
+        <div className="ticket-tag">
+          {ticket.tag.join(', ')}
+        </div>
+      </div>
+      <div className="priority-icon">
+        {priorityIcon}
+      </div>
+    </div>
+  );
+};
 
 export default KanbanBoard;
