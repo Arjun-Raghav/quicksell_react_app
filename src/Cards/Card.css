@@ -1,94 +1,94 @@
 .ticket-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px 0;
-  }
-  
-  .ticket-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: grey;
-  }
-  
-  .user-icon {
-    color: grey;
-    border: solid 1px grey;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px;
-  }
-  
-  .ticket-title {
-    margin: 5px 0;
-    display: flex;
-    align-items: start;
-  }
-  
-  .ticket-status > svg {
-    margin-right: 5px;
-    font-size: 10px;
-  }
-  .ticket-title > p {
-    font-weight: 500;
-    margin: 0;
-  }
-  .ticket-footer {
-    display: flex;
-    align-items: center;
-    color: grey;
-  }
-  
-  .three-dots-icon {
-    color: grey;
-  }
-  
-  .tag-icon {
-    color: grey;
-    margin-right: 5px;
-  }
-  .ticket-tag {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ticket-tag {
-    font-size: 12px;
-  }
-  
-  select {
-    padding: 5px;
-    font-size: 16px;
-  }
-  
-  .availability-icon {
-    color: blue;
-  }
-  
-  .priority-icon,
-  .ticket-tag {
-    margin-right: 10px;
-    padding: 4px;
-    border: solid;
-    border-width: 0.1px;
-    border-color: rgb(221, 221, 221);
-    border-radius: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .urgent-icon {
-    height: 18px;
-    width: 18px;
-    display: flex;
-    border-radius: 3px;
-    justify-content: center;
-    align-items: center;
-    background-color: #fc7941;
-  }
-  
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+}
+
+.user-icon {
+  color: grey;
+  border: solid 1px grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.ticket-title {
+  margin: 5px 0;
+  display: flex;
+  align-items: start;
+}
+
+.ticket-status > svg {
+  margin-right: 5px;
+  font-size: 10px;
+}
+.ticket-title > p {
+  font-weight: 500;
+  margin: 0;
+  font-size: 14px;
+}
+.ticket-footer {
+  display: flex;
+  align-items: center;
+  color: grey;
+}
+
+.three-dots-icon {
+  color: grey;
+}
+
+.tag-icon {
+  color: grey;
+  margin-right: 5px;
+}
+.ticket-tag {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-tag {
+  font-size: 12px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.availability-icon {
+  color: blue;
+}
+
+.priority-icon,
+.ticket-tag {
+  margin-right: 10px;
+  padding: 4px;
+  border: solid;
+  border-width: 0.1px;
+  border-color: rgb(221, 221, 221);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.urgent-icon {
+  height: 18px;
+  width: 18px;
+  display: flex;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fc7941;
+}

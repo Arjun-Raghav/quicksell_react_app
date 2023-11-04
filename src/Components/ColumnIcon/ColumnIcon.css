@@ -1,20 +1,19 @@
 .user-icon {
-    color: grey;
-    border: solid 1px grey;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px;
-  }
-  
-  .urgent-icon {
-    height: 18px;
-    width: 18px;
-    display: flex;
-    border-radius: 3px;
-    justify-content: center;
-    align-items: center;
-    background-color: #fc7941;
-  }
-  
+  color: grey;
+  border: solid 1px grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.urgent-icon {
+  height: 18px;
+  width: 18px;
+  display: flex;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fc7941;
+}

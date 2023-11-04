@@ -4,17 +4,17 @@ const SignalIcon = ({ colorScheme }) => {
   const signalStyles = {
     container: {
       display: "flex",
-      alignItems: "flex-end", // Align bars to the bottom
-      width: "25px", // Adjust the width to make the entire icon smaller
-      height: "15px", // Adjust the height to make the entire icon smaller
+      alignItems: "flex-end", 
+      width: "25px", 
+      height: "15px", 
     },
     bar: {
       width: "5px",
-      margin: "0 1px", // Decrease horizontal spacing
+      margin: "0 1px", 
     },
   };
 
-  // Define bar colors based on the colorScheme parameter
+  
   let barColors = [];
   if (colorScheme === 1) {
     barColors = ["#444", "#ccc", "#ccc"];
@@ -23,7 +23,7 @@ const SignalIcon = ({ colorScheme }) => {
   } else if (colorScheme === 3) {
     barColors = ["#444", "#444", "#444"];
   } else {
-    barColors = ["#444", "#444", "#444"]; // Default to all dark grey
+    barColors = ["#444", "#444", "#444"]; 
   }
 
   return (

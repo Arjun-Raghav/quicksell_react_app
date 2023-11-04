@@ -37,41 +37,43 @@ export default function Header({ grouping, sorting, setGrouping, setSorting }) {
   };
 
   return (
-    <div className="container" ref={dropdownRef}>
-      <button className="toggle-button" onClick={toggleDropdown}>
-        <FontAwesomeIcon icon={faSliders} />
-        <p>Display</p>
-        <FontAwesomeIcon icon={faAngleDown} />
-      </button>
-      {isOpen && (
-        <div className="dropdown-content">
-          <div className="dropdown-item">
-            <p> Grouping</p>
-            <select
-              value={grouping}
-              onChange={(e) =>
-                updateStateAndLocalStorage("grouping", e.target.value)
-              }
-            >
-              <option value="status">Status</option>
-              <option value="user">User</option>
-              <option value="priority">Priority</option>
-            </select>
+    <div className="container">
+      <div className="ref-handler" ref={dropdownRef}>
+        <button className="toggle-button" onClick={toggleDropdown}>
+          <FontAwesomeIcon icon={faSliders} />
+          <p>Display</p>
+          <FontAwesomeIcon icon={faAngleDown} />
+        </button>
+        {isOpen && (
+          <div className="dropdown-content">
+            <div className="dropdown-item">
+              <p> Grouping</p>
+              <select
+                value={grouping}
+                onChange={(e) =>
+                  updateStateAndLocalStorage("grouping", e.target.value)
+                }
+              >
+                <option value="status">Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
+              </select>
+            </div>
+            <div className="dropdown-item">
+              <p>Ordering</p>
+              <select
+                value={sorting}
+                onChange={(e) =>
+                  updateStateAndLocalStorage("sorting", e.target.value)
+                }
+              >
+                <option value="priority">Priority</option>
+                <option value="title">Title</option>
+              </select>
+            </div>
           </div>
-          <div className="dropdown-item">
-            <p>Ordering</p>
-            <select
-              value={sorting}
-              onChange={(e) =>
-                updateStateAndLocalStorage("sorting", e.target.value)
-              }
-            >
-              <option value="priority">Priority</option>
-              <option value="title">Title</option>
-            </select>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

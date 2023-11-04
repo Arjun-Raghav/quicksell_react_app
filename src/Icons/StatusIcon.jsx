@@ -13,7 +13,6 @@ const StatusIcon = ({ status }) => {
       <FontAwesomeIcon
         icon={faCircleHalfStroke}
         flip="horizontal"
-        // rotation={90}
         style={{
           color: "#f2d26e",
           marginRight: "10px",
@@ -35,7 +34,6 @@ const StatusIcon = ({ status }) => {
 
     return (
       <div style={iconStyle}>
-        {/* You can customize the content inside the circle */}
       </div>
     );
   } else if (status === "Done") {

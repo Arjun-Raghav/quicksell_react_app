@@ -2,18 +2,14 @@ import StatusIcon from "../../Icons/StatusIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
-  faSignal,
   faEllipsisH,
-  faExclamationTriangle,
   faCircleXmark,
-  faCheck,
-  faCircleCheck,
   faExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import SignalIcon from "../../Icons/SignalIcon";
 
 export default function ColumnIcon({ grouping, group }) {
-  if (grouping == "status") {
+  if (grouping === "status") {
     let statusIcon;
 
     if (group === "Todo") {
@@ -30,13 +26,13 @@ export default function ColumnIcon({ grouping, group }) {
       statusIcon = <StatusIcon status="Backlog" />;
     }
     return statusIcon;
-  } else if (grouping == "user") {
+  } else if (grouping === "user") {
     return (
       <div className="user-icon">
-        <FontAwesomeIcon icon={faUser} /> {/* Empty circle icon */}
+        <FontAwesomeIcon icon={faUser} /> 
       </div>
     );
-  } else if (grouping == "priority") {
+  } else if (grouping === "priority") {
     let priorityIcon;
 
     if (group === "Urgent") {

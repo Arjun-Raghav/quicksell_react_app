@@ -72,15 +72,17 @@ export default function KanbanBoard() {
                 <FontAwesomeIcon icon={faEllipsis} />
               </div>
             </div>
-            {groupedAndSortedTickets[group].map((ticket) => {
-              if (grouping === "status") {
-                return <StatusCard key={ticket.id} ticket={ticket} />;
-              } else if (grouping === "user") {
-                return <UserCard key={ticket.id} ticket={ticket} />;
-              } else if (grouping === "priority") {
-                return <PriorityCard key={ticket.id} ticket={ticket} />;
-              }
-            })}
+            <div className="tickets">
+              {groupedAndSortedTickets[group].map((ticket) => {
+                if (grouping === "status") {
+                  return <StatusCard key={ticket.id} ticket={ticket} />;
+                } else if (grouping === "user") {
+                  return <UserCard key={ticket.id} ticket={ticket} />;
+                } else if (grouping === "priority") {
+                  return <PriorityCard key={ticket.id} ticket={ticket} />;
+                }
+              })}
+            </div>
           </div>
         ))}
       </div>

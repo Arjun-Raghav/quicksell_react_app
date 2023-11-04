@@ -5,7 +5,6 @@ import {
   faExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircle as faCircleRegular } from "@fortawesome/free-regular-svg-icons";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { faSignal } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import "./Card.css";
@@ -78,7 +77,7 @@ export default function UserCard({ ticket }) {
 
         <div className="ticket-tag">
           <div className="tag-icon">
-            <FontAwesomeIcon icon={faCircle} /> {/* Small grey circle icon */}
+            <FontAwesomeIcon icon={faCircle} /> 
           </div>
           <div className="tag-name">{ticket.tag}</div>
         </div>

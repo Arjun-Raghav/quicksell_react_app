@@ -32,7 +32,7 @@ export default function StatusCard({ ticket }) {
       <div className="ticket-header">
         <div className="ticket-id">{ticket.id}</div>
         <div className="user-icon">
-          <FontAwesomeIcon icon={faUser} /> {/* Empty circle icon */}
+          <FontAwesomeIcon icon={faUser} /> 
         </div>
       </div>
       <div className="ticket-title">
@@ -43,7 +43,7 @@ export default function StatusCard({ ticket }) {
 
         <div className="ticket-tag">
           <div className="tag-icon">
-            <FontAwesomeIcon icon={faCircle} /> {/* Small grey circle icon */}
+            <FontAwesomeIcon icon={faCircle} /> 
           </div>
           <div className="tag-name">{ticket.tag}</div>
         </div>
