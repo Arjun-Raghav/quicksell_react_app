@@ -1,11 +1,7 @@
-import logo from './logo.svg';
-import KandanBoard from './Kandan.js'
-import './App.css';
+import KandanBoard from "./KanbanBoard";
 
 function App() {
-  return (
-    <KandanBoard/>
-  );
+  return <KandanBoard />;
 }
 
 export default App;

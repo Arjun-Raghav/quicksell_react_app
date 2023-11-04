@@ -1,97 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .kanban-board {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.options {
-  display: flex;
-  justify-content: space-between;
-  width: 600px;
-  margin-bottom: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f5f8;
 }
 
 .kanban-columns {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  margin-top: 30px;
 }
-
 .kanban-column {
-  flex: 1;
-  background-color: #f3f3f3;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
+  flex: 1 1 0px;
+  margin: 0 30px;
 }
-
-.ticket-card, .user-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.ticket-header, .user-header {
+.kanban-column-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
-
-.ticket-id, .user-id {
-  font-weight: bold;
-}
-
-.user-icon {
-  color: grey;
-}
-
-.ticket-title, .user-title {
-  font-weight: bold;
-  margin: 5px 0;
-}
-
-.ticket-info, .user-info {
+.kanban-column-header-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-
-.three-dots-icon {
+.kanban-column-header-info > p {
+  margin: 0 10px;
+}
+.kanban-column-header-info > span {
   color: grey;
 }
-
-.tag-icon {
-  color: grey;
+.kanban-column-header-more > svg {
   margin: 0 5px;
+  color: grey;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.ticket-tag, .user-tag {
-  font-size: 12px;
-}
-
-select {
-  padding: 5px;
-  font-size: 16px;
-}
-
-.availability-icon {
-  color: blue;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
